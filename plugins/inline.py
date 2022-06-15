@@ -35,7 +35,6 @@ async def answer(bot, query):
         file_type = None
 
     offset = int(query.offset or 0)
-    reply_markup = get_reply_markup(bot.username, query=text)
     files, next_offset = await get_search_results(text, file_type=file_type, max_results=10, offset=offset)
 
     for file in files:
@@ -45,7 +44,6 @@ async def answer(bot, query):
                 document_file_id=file.file_id,
                 caption=file.caption or "",
                 description=f'Size: {size_formatter(file.file_size)}\nType: {file.file_type}',
-                reply_markup=reply_markup
             )
         )
 
@@ -75,15 +73,6 @@ async def answer(bot, query):
         )
 
 
-def get_reply_markup(username, query):
-    url = 't.me/share/url?url=' + quote(SHARE_BUTTON_TEXT.format(username=username))
-    buttons = [
-        [
-            InlineKeyboardButton('Search again', switch_inline_query_current_chat=query),
-            InlineKeyboardButton('Share bot', url=url),
-        ]
-    ]
-    return InlineKeyboardMarkup(buttons)
 
 
 def size_formatter(size):
