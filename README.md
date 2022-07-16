@@ -1,4 +1,4 @@
-# [Media Search bot](https://github.com/Mahesh0253/Media-Search-bot)
+# Inline File Telegram bot
 
 * Index channel or group files for inline search.
 * When you post file on telegram channel or group this bot will save that file in database, so you can search easily in inline mode.
@@ -6,12 +6,15 @@
 
 ## Installation
 
-### Watch this video to create bot - https://youtu.be/dsuTn4qV2GA
-### Easy Way
+<details>
+    <summary><b>Heroku</b></summary>
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+</details>
 
 
-### Hard Way
+<details>
+    <summary>Manually</summary>
+
 ```bash
 # Create virtual environment
 python3 -m venv env
@@ -27,8 +30,9 @@ pip3 install -r requirements.txt
 python3 bot.py
 ```
 Check [`sample_info.py`](sample_info.py) before editing [`info.py`](info.py) file
-
-### Docker
+</details>
+<details>
+    <summary><b>Docker</b></summary>
 ```
 docker run -d \
     -e BOT_TOKEN="123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11" \
@@ -48,9 +52,12 @@ docker run -d \
      --restart on-failure \
      --name mediasearchbot botxtg/media-search-bot
 ```
+</details>
 
 ## Variables
-### Required Variables
+
+<details>
+    <summary><b> Required Variables</b></summary>
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
@@ -58,8 +65,11 @@ docker run -d \
 * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
 * `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/dsuTn4qV2GA)
 * `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/dsuTn4qV2GA)
+</details>
 
-### Optional Variables
+<details>
+    <summary><b>Optional Variables</b></summary>
+
 * `COLLECTION_NAME`: Name of the collections. Defaults to Telegram_files. If you going to use same database, then use different collection name for each bot
 * `CACHE_TIME`: The maximum amount of time in seconds that the result of the inline query may be cached on the server
 * `USE_CAPTION_FILTER`: Whether bot should use captions to improve search results. (True/False)
@@ -76,20 +86,27 @@ delete - Delete file from database
 index - Index all files from channel or group
 logger - Get log file
 ```
+</details>
 
-## Tips
+## More Information
+
+<details>
+    <summary><b>Tips</b></summary>
+
 * Use `index` command or run [one_time_indexer.py](one_time_indexer.py) file to save old files in the database that are not indexed yet.
 * You can use `|` to separate query and file type while searching for specific type of file. For example: `Avengers | video`
 * If you don't want to create a channel or group, use your chat ID / username as the channel ID. When you send a file to a bot, it will be saved in the database.
+</details>
 
-## Contributions
-Contributions are welcome.
 
-## Thanks to [Pyrogram](https://github.com/pyrogram/pyrogram)
+<details>
+    <summary><b>Get Help</b></summary>
 
-## Support
-[Update Channel](https://t.me/botxupdates) and [Support Group](https://t.me/botxsupport)
+[Update Channel](https://t.me/ivbotX) and [Support Group](https://t.me/ivbotX)
+</details>
 
-## License
+<details>
+    <summary><b>Lisense</b></summary>
 Code released under [The GNU General Public License](LICENSE).
+</details>
 
