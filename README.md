@@ -32,7 +32,8 @@ Check [`sample_info.py`](sample_info.py) before editing [`info.py`](info.py) fil
 ## Variables
 
 <details>
-    <summary><b> Required Variables</b></summary>
+    <summary><b>Required Variables</b></summary>
+    
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
@@ -53,20 +54,26 @@ Check [`sample_info.py`](sample_info.py) before editing [`info.py`](info.py) fil
 * `START_MSG`: Welcome message for start command.
 * `INVITE_MSG`: Auth channel invitation message.
 * `USERBOT_STRING_SESSION`: User bot string session.
-## Admin commands
-```
-channel - Get basic infomation about channels
-total - Show total of saved files
-delete - Delete file from database
-index - Index all files from channel or group
-logger - Get log file
-```
+
 </details>
 
 ## More Information
 
 <details>
-    <summary><b>Tips</b></summary>
+    <summary><b>Admin commands</b></summary> 
+
+``` 
+/channel - Get basic infomation about channels
+/total - Show total of saved files 
+/delete - Delete file from database 
+/index - Index all files from channel or group 
+/logger - Get log file
+
+```
+</details>
+
+<details>
+     <summary><b>Tips</b></summary>
 
 * Use `index` command or run [one_time_indexer.py](one_time_indexer.py) file to save old files in the database that are not indexed yet.
 * You can use `|` to separate query and file type while searching for specific type of file. For example: `Avengers | video`
